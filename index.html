@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مسارات الأفكار | الإطار العام للمشروع</title>
+    <title>الإطار العام لمشروع المدارس الأهلية</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,7 +11,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -19,82 +19,82 @@
     <!-- Custom Styles -->
     <style>
         body {
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
             scroll-behavior: smooth;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Almarai', sans-serif;
+            background-color: #F9FAFB; /* Light Gray Background */
+            color: #111827; /* Dark text */
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         /* New Color Palette */
         :root {
-            --primary-dark: #1A374D; /* Deep Blue */
-            --primary-light: #406882; /* Medium Blue */
-            --accent-gold: #B1A079;   /* Muted Gold */
-            --background-light: #F8F9FA;
-            --text-dark: #111827;
-            --text-light: #4B5563;
+            --primary-blue: #0A4D68;
+            --secondary-blue: #088395;
+            --accent-teal: #05BFDB;
+            --light-gray: #F9FAFB;
+            --dark-text: #1F2937;
+            --light-text: #4B5563;
         }
 
-        .bg-primary-dark { background-color: var(--primary-dark); }
-        .bg-primary-light { background-color: var(--primary-light); }
-        .bg-accent-gold { background-color: var(--accent-gold); }
-        .text-accent-gold { color: var(--accent-gold); }
-        .border-accent-gold { border-color: var(--accent-gold); }
-
+        .bg-primary-blue { background-color: var(--primary-blue); }
+        .text-secondary-blue { color: var(--secondary-blue); }
+        .border-secondary-blue { border-color: var(--secondary-blue); }
+        .bg-accent-teal { background-color: var(--accent-teal); }
+        
         .nav-link {
             position: relative;
             transition: color 0.3s;
+            padding: 8px 0;
         }
         .nav-link::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: -5px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--accent-gold);
+            background-color: var(--secondary-blue);
             transition: width 0.3s ease-in-out;
         }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-blue);
+        }
         .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
+            width: 70%;
         }
 
         .content-section h2 {
             font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary-dark);
+            font-weight: 700;
+            color: var(--primary-blue);
             text-align: center;
             margin-bottom: 1rem;
         }
-         .content-section .subtitle {
+        .content-section .subtitle {
             text-align: center;
-            color: var(--text-light);
+            color: var(--light-text);
             font-size: 1.125rem;
             max-width: 600px;
-            margin: 0 auto 3rem auto;
+            margin: 0 auto 4rem auto;
         }
         .content-section h3 {
-            font-size: 1.875rem;
-            font-weight: 700;
-            color: var(--primary-light);
-            margin-bottom: 1rem;
-            margin-top: 1.5rem;
-            border-right: 4px solid var(--accent-gold);
-            padding-right: 1rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
         }
          .content-section h4 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark-text);
             margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
         }
         .content-section p, .content-section li {
-            font-size: 1.125rem;
+            font-size: 1.1rem;
             line-height: 1.8;
-            color: var(--text-light);
+            color: var(--light-text);
             margin-bottom: 1rem;
         }
         .content-section ul {
@@ -103,126 +103,84 @@
         }
         .content-section ul li {
             position: relative;
-            padding-right: 2rem;
+            padding-right: 1.75rem;
         }
         .content-section ul li::before {
-            content: '\f00c'; /* Font Awesome check icon */
+            content: '\f058'; /* Font Awesome check-circle icon */
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             position: absolute;
             right: 0;
             top: 6px;
-            color: var(--accent-gold);
+            color: var(--secondary-blue);
         }
-
-        /* Timeline for Stages */
-        .timeline {
+        .content-section ol {
+            list-style: none;
+            counter-reset: item;
+            padding-right: 0;
+        }
+        .content-section ol > li {
+            counter-increment: item;
+            margin-bottom: 1rem;
+            padding-right: 2.5rem;
             position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
         }
-        .timeline::after {
-            content: '';
+        .content-section ol > li::before {
+            content: counter(item);
             position: absolute;
-            width: 6px;
-            background-color: #e2e8f0;
+            right: 0;
             top: 0;
-            bottom: 0;
-            right: 50%;
-            margin-right: -3px;
-        }
-        .timeline-container {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-        .timeline-container.left {
-            right: 50%;
-        }
-        .timeline-container.right {
-            left: 50%;
-        }
-        .timeline-container::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: white;
-            border: 4px solid var(--accent-gold);
-            top: 15px;
+            color: white;
+            background-color: var(--accent-teal);
+            font-weight: bold;
+            width: 1.75rem;
+            height: 1.75rem;
             border-radius: 50%;
-            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
         }
-        .timeline-container.right::after {
-            left: -16px;
-        }
-        .timeline-content {
-            padding: 20px 30px;
+        .card {
             background-color: white;
-            position: relative;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e5e7eb;
         }
-        .timeline-content:hover {
+        .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-        .timeline-content h3 {
-            border: none;
-            padding: 0;
-            margin-top: 0;
-        }
-        
-        @media screen and (max-width: 768px) {
-            .timeline::after {
-                right: 31px;
-            }
-            .timeline-container {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            .timeline-container.right, .timeline-container.left {
-                left: 0%;
-                right: auto;
-            }
-            .timeline-container.right::after, .timeline-container.left::after {
-                left: 15px;
-                right: auto;
-            }
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
         }
     </style>
 </head>
-<body class="bg-background-light text-text-dark">
+<body class="bg-light-gray">
 
     <!-- Header -->
     <header id="header" class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <img src="/images/logo.png" alt="شعار مسارات الأفكار" class="h-12 md:h-16 w-auto" onerror="this.onerror=null; this.src='https://placehold.co/200x80/ffffff/1A374D?text=Logo';">
+                    <img src="https://storage.googleapis.com/gemini-prod-us-east1-user-content/uploaded:شعار%20مسارات%20الافكار%20(1).png-d807bb64-6704-40a5-9388-19b3baf8fce7" alt="شعار المشروع" class="h-12 md:h-16 w-auto" onerror="this.onerror=null; this.src='https://placehold.co/200x80/ffffff/0A4D68?text=Logo';">
                 </div>
                 <nav class="hidden lg:flex items-center space-x-5 space-x-reverse">
-                    <a href="#vision" class="nav-link text-base font-semibold text-gray-700 hover:text-primary-dark">المقدمة</a>
-                    <a href="#stages" class="nav-link text-base font-semibold text-gray-700 hover:text-primary-dark">المراحل</a>
-                    <a href="#governance" class="nav-link text-base font-semibold text-gray-700 hover:text-primary-dark">الحوكمة</a>
-                    <a href="#risks" class="nav-link text-base font-semibold text-gray-700 hover:text-primary-dark">المخاطر</a>
-                    <a href="#branding" class="nav-link text-base font-semibold text-gray-700 hover:text-primary-dark">الهوية</a>
-                    <a href="#expansion" class="nav-link text-base font-semibold text-gray-700 hover:text-primary-dark">التوسع</a>
-                    <a href="#termination" class="nav-link text-base font-semibold text-gray-700 hover:text-primary-dark">إنهاء العقد</a>
+                    <a href="#vision" class="nav-link text-base font-semibold text-gray-700">المقدمة</a>
+                    <a href="#stages" class="nav-link text-base font-semibold text-gray-700">المراحل</a>
+                    <a href="#governance" class="nav-link text-base font-semibold text-gray-700">الحوكمة</a>
+                    <a href="#risks" class="nav-link text-base font-semibold text-gray-700">المخاطر</a>
+                    <a href="#branding" class="nav-link text-base font-semibold text-gray-700">الهوية</a>
+                    <a href="#expansion" class="nav-link text-base font-semibold text-gray-700">التوسع</a>
+                    <a href="#termination" class="nav-link text-base font-semibold text-gray-700">إنهاء العقد</a>
                 </nav>
                 <div class="lg:hidden">
                     <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white py-4">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white py-4 border-t">
             <a href="#vision" class="block text-center py-2 px-4 text-lg font-semibold text-gray-700 hover:bg-gray-100">المقدمة</a>
             <a href="#stages" class="block text-center py-2 px-4 text-lg font-semibold text-gray-700 hover:bg-gray-100">المراحل</a>
             <a href="#governance" class="block text-center py-2 px-4 text-lg font-semibold text-gray-700 hover:bg-gray-100">الحوكمة</a>
@@ -237,89 +195,103 @@
         
         <section id="vision" class="py-20 bg-white content-section">
             <div class="container mx-auto px-6">
-                <h2>الإطار العام للمشروع</h2>
-                <div class="max-w-4xl mx-auto bg-background-light p-8 md:p-12 rounded-lg border-l-8 border-accent-gold">
-                    <h3>مقدمة ورؤية المشروع:</h3>
-                    <p>يهدف هذا المشروع إلى إنشاء نموذج رائد ومبتكر في قطاع التعليم الأهلي في المملكة العربية السعودية، يقوم على الشراكة الاستراتيجية بين الخبرات الاستثمارية والتطويرية (ممثلة في الأستاذ سالم السبيعي) والخبرات التشغيلية والتسويقية (ممثلة في شركة مسارات الأفكار التسويقية) والقطاع الخيري (ممثلاً في الجمعيات الخيرية وأوقافها).</p>
-                    <h3>الكيان المنفذ:</h3>
-                    <p>سيتم تأسيس شركة ذات مسؤولية محدودة تحت اسم مقترح "شركة ركائز التعليم للتشغيل والإدارة" أو أي اسم آخر يتم الاتفاق عليه، وتكون هذه الشركة هي المظلة القانونية التي تدير المشروع وتعود ملكيتها مناصفة بين الأستاذ سالم السبيعي وشركة مسارات الأفكار التسويقية.</p>
+                <h2>الإطار العام لمشروع المدارس الأهلية</h2>
+                <div class="max-w-4xl mx-auto mt-12">
+                    <div class="bg-white p-8 md:p-12 rounded-lg border-r-4 border-secondary-blue shadow-md">
+                        <h3>مقدمة ورؤية المشروع:</h3>
+                        <p>يهدف هذا المشروع إلى إنشاء نموذج رائد ومبتكر في قطاع التعليم الأهلي في المملكة العربية السعودية، يقوم على الشراكة الاستراتيجية بين الخبرات الاستثمارية والتطويرية (ممثلة في الأستاذ سالم السبيعي) والخبرات التشغيلية والتسويقية (ممثلة في شركة مسارات الأفكار التسويقية) والقطاع الخيري (ممثلاً في الجمعيات الخيرية وأوقافها).</p>
+                        <h3>الكيان المنفذ:</h3>
+                        <p>سيتم تأسيس شركة ذات مسؤولية محدودة تحت اسم مقترح "شركة ركائز التعليم للتشغيل والإدارة" أو أي اسم آخر يتم الاتفاق عليه، وتكون هذه الشركة هي المظلة القانونية التي تدير المشروع وتعود ملكيتها مناصفة بين الأستاذ سالم السبيعي وشركة مسارات الأفكار التسويقية.</p>
+                    </div>
                 </div>
             </div>
         </section>
         
-        <section id="stages" class="py-20 bg-background-light content-section">
+        <section id="stages" class="py-20 bg-light-gray content-section">
             <div class="container mx-auto px-6">
                 <h2>مراحل المشروع الرئيسية</h2>
-                <p class="subtitle">سنقسم المشروع إلى مراحل متكاملة لضمان الوضوح في توزيع المهام والمسؤوليات.</p>
+                <p class="subtitle">نقسم المشروع إلى مراحل متكاملة لضمان الوضوح في توزيع المهام والمسؤوليات.</p>
                 
-                <div class="timeline">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Stage 1 -->
-                    <div class="timeline-container right">
-                        <div class="timeline-content">
-                            <h3>المرحلة الأولى: التأسيس ودراسات الجدوى</h3>
-                            <p>هذه المرحلة تسبق أي التزام مع الجهات الخيرية وتعتبر حجر الأساس للمشروع.</p>
-                        </div>
+                    <div class="card p-8">
+                        <h3 class="flex items-center gap-4"><span class="flex items-center justify-center w-10 h-10 rounded-full bg-secondary-blue text-white font-bold text-xl">1</span> المرحلة الأولى: التأسيس ودراسات الجدوى</h3>
+                        <p>هذه المرحلة تسبق أي التزام مع الجهات الخيرية وتعتبر حجر الأساس للمشروع.</p>
                     </div>
 
                     <!-- Stage 2 -->
-                    <div class="timeline-container left">
-                        <div class="timeline-content">
-                            <h3>المرحلة الثانية: الشراكة، التمويل، والإنشاء</h3>
-                            <p>تبدأ بعد تحديد الجمعية الخيرية الشريكة وتشمل التعاقد، تسويق الوقف، وإدارة الإنشاءات.</p>
-                        </div>
+                    <div class="card p-8">
+                        <h3 class="flex items-center gap-4"><span class="flex items-center justify-center w-10 h-10 rounded-full bg-secondary-blue text-white font-bold text-xl">2</span> المرحلة الثانية: الشراكة والإنشاء</h3>
+                        <p>تبدأ بعد تحديد الجمعية الخيرية الشريكة وتشمل التعاقد، تسويق الوقف، وإدارة الإنشاءات.</p>
                     </div>
                     
                     <!-- Stage 3 -->
-                    <div class="timeline-container right">
-                        <div class="timeline-content">
-                            <h3>المرحلة الثالثة: الإعداد للتشغيل</h3>
-                            <p>تبدأ قبل 6-9 أشهر من الافتتاح وتشمل التراخيص، بناء الهياكل، واطلاق الحملات التسويقية.</p>
-                        </div>
+                    <div class="card p-8">
+                        <h3 class="flex items-center gap-4"><span class="flex items-center justify-center w-10 h-10 rounded-full bg-secondary-blue text-white font-bold text-xl">3</span> المرحلة الثالثة: الإعداد للتشغيل</h3>
+                        <p>تبدأ قبل 6-9 أشهر من الافتتاح وتشمل التراخيص، بناء الهياكل، واطلاق الحملات التسويقية.</p>
                     </div>
 
                     <!-- Stage 4 -->
-                    <div class="timeline-container left">
-                        <div class="timeline-content">
-                            <h3>المرحلة الرابعة: الإدارة والتشغيل المستمر</h3>
-                            <p>قيادة عمليات المدرسة بشكل كامل لضمان الجودة والتطوير المستمر.</p>
-                        </div>
+                    <div class="card p-8">
+                        <h3 class="flex items-center gap-4"><span class="flex items-center justify-center w-10 h-10 rounded-full bg-secondary-blue text-white font-bold text-xl">4</span> المرحلة الرابعة: الإدارة والتشغيل المستمر</h3>
+                        <p>قيادة عمليات المدرسة بشكل كامل لضمان الجودة والتطوير المستمر ورفع التقارير الدورية.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="governance" class="py-20 bg-white content-section">
-            <div class="container mx-auto px-6 max-w-4xl">
+            <div class="container mx-auto px-6 max-w-5xl">
                 <h2>الحوكمة والأرباح</h2>
                 <p class="subtitle">نظام واضح يضمن تحقيق الأهداف الاستراتيجية وتوزيع العوائد بشفافية.</p>
-                <div class="space-y-8">
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4>مجلس الإدارة لشركة التشغيل:</h4>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-light-gray p-8 rounded-lg">
+                        <h4>مجلس إدارة شركة التشغيل</h4>
                         <p>يتكون من الأستاذ سالم السبيعي وممثل عن مسارات الأفكار. هذا المجلس هو المسؤول عن القرارات الاستراتيجية الكبرى (مثل إقرار الميزانية السنوية، خطط التوسع، تعديل الرسوم الدراسية بشكل كبير، تعيين قائد المدرسة).</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4>توزيع الأرباح (بعد توضيح إضافي):</h4>
+                    <div class="bg-light-gray p-8 rounded-lg">
+                        <h4>آلية توزيع الأرباح</h4>
                         <p>بعد خصم كافة المصاريف التشغيلية ورسوم الإدارة، يتم توزيع صافي الربح كالتالي:</p>
-                        <ul class="my-4">
-                            <li>70% للجمعية الخيرية (لصالح الوقف وتنمية أعمالها الخيرية).</li>
-                            <li>30% لـ "شركة ركائز التعليم للتشغيل والإدارة".</li>
+                        <ul>
+                            <li><strong>70%</strong> للجمعية الخيرية (لصالح الوقف وتنمية أعمالها الخيرية).</li>
+                            <li><strong>30%</strong> لـ "شركة ركائز التعليم للتشغيل والإدارة".</li>
                         </ul>
-                        <p>الأرباح الخاصة بشركة التشغيل (الـ 30%) يتم توزيعها بالتساوي (50/50) بين الشركاء.</p>
+                        <p>أرباح شركة التشغيل (الـ 30%) توزع بالتساوي (50/50) بين الشركاء.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="risks" class="py-20 bg-background-light content-section">
-            <div class="container mx-auto px-6 max-w-4xl">
+        <section id="risks" class="py-20 bg-light-gray content-section">
+            <div class="container mx-auto px-6 max-w-5xl">
                 <h2>إدارة المخاطر</h2>
                  <p class="subtitle">رؤية استباقية للوقاية والمعالجة لضمان استمرارية المشروع ونجاحه.</p>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white p-6 rounded-lg shadow-sm"><h4>تأخر الإنشاءات</h4><p>التعاقد مع مقاولين ذوي سمعة وتضمين شروط جزائية واضحة.</p></div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm"><h4>ضعف الإقبال</h4><p>بدء الحملات التسويقية مبكراً وتقديم عروض للمسجلين الأوائل.</p></div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm"><h4>تغيير اللوائح</h4><p>تكليف مسؤول متخصص بالمتابعة وبناء نموذج تشغيلي مرن.</p></div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm"><h4>المنافسة</h4><p>بناء قيمة فريدة تتمحور حول جودة التعليم والاهتمام بالطالب.</p></div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm md:col-span-2"><h4>الأزمات الصحية أو الاقتصادية</h4><p>تأسيس بنية تحتية للتعلم عن بعد وإنشاء صندوق احتياطي للمخاطر.</p></div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg text-center card">
+                        <i class="fas fa-hard-hat text-3xl text-accent-teal mb-4"></i>
+                        <h4>تأخر الإنشاءات</h4>
+                        <p class="text-sm">التعاقد مع مقاولين ذوي سمعة وتضمين شروط جزائية واضحة.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg text-center card">
+                        <i class="fas fa-users-slash text-3xl text-accent-teal mb-4"></i>
+                        <h4>ضعف الإقبال</h4>
+                        <p class="text-sm">بدء الحملات التسويقية مبكراً وتقديم عروض للمسجلين الأوائل.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg text-center card">
+                        <i class="fas fa-file-alt text-3xl text-accent-teal mb-4"></i>
+                        <h4>تغيير اللوائح</h4>
+                        <p class="text-sm">تكليف مسؤول متخصص بالمتابعة وبناء نموذج تشغيلي مرن.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg text-center card">
+                        <i class="fas fa-lightbulb text-3xl text-accent-teal mb-4"></i>
+                        <h4>المنافسة</h4>
+                        <p class="text-sm">بناء قيمة فريدة تتمحور حول جودة التعليم والاهتمام بالطالب.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg text-center card lg:col-span-2">
+                        <i class="fas fa-shield-virus text-3xl text-accent-teal mb-4"></i>
+                        <h4>الأزمات الصحية أو الاقتصادية</h4>
+                        <p class="text-sm">تأسيس بنية تحتية للتعلم عن بعد وإنشاء صندوق احتياطي للمخاطر وتوفير خطط سداد مرنة.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -327,31 +299,34 @@
         <section id="branding" class="py-20 bg-white content-section">
             <div class="container mx-auto px-6 max-w-4xl">
                 <h2>الهوية المؤسسية: بصمة "مسارات الأفكار"</h2>
-                <p>يعتبر بناء الهوية المؤسسية من صميم اختصاص وخبرة "مسارات الأفكار التسويقية". وفور الاتفاق على الإطار العام وتأسيس "شركة التشغيل"، سنقوم بالخطوات التالية:</p>
-                <ul>
-                    <li><strong>ورشة عمل استراتيجية:</strong> لاستخلاص الرؤية، الرسالة، والقيم الجوهرية للمشروع.</li>
-                    <li><strong>تطوير الاسم والشعار:</strong> ابتكار اسم جذاب وهوية بصرية متكاملة تعكس الجودة والأصالة.</li>
-                    <li><strong>صياغة القصة المؤسسية:</strong> بناء قصة مؤثرة تربط بين العمل الخيري والهدف التعليمي النبيل.</li>
-                </ul>
+                <p class="subtitle">يعتبر بناء الهوية المؤسسية من صميم اختصاص وخبرة "مسارات الأفكار التسويقية".</p>
+                <ol>
+                    <li><strong>ورشة عمل استراتيجية:</strong> عقد جلسة عمل مكثفة مع الشركاء لاستخلاص الرؤية، الرسالة، والقيم الجوهرية للمشروع التعليمي.</li>
+                    <li><strong>تطوير الاسم والشعار:</strong> ابتكار اسم جذاب وذي معنى للمدرسة (ولسلسلة المدارس لاحقًا)، وتصميم شعار احترافي وهوية بصرية متكاملة تعكس الجودة والأصالة.</li>
+                    <li><strong>صياغة القصة المؤسسية:</strong> بناء قصة مؤثرة حول المشروع تربط بين العمل الخيري (الوقف) والهدف التعليمي النبيل، لاستخدامها في كافة المواد التسويقية والإعلامية.</li>
+                </ol>
             </div>
         </section>
 
-        <section id="expansion" class="py-20 bg-background-light content-section">
-            <div class="container mx-auto px-6 max-w-4xl">
+        <section id="expansion" class="py-20 bg-light-gray content-section">
+            <div class="container mx-auto px-6 max-w-5xl">
                 <h2>خطة التوسع</h2>
-                <p class="subtitle">رؤية استراتيجية لتحويل المشروع من نموذج رائد إلى سلسلة مدارس مؤثرة.</p>
-                <div class="flex flex-col md:flex-row gap-6 text-center">
-                    <div class="flex-1 bg-white p-6 rounded-lg shadow-sm">
-                        <i class="fas fa-flag text-4xl text-accent-gold mb-4"></i>
-                        <h4>المرحلة 1 (1-4 سنوات)</h4><p>إتقان النموذج</p>
+                <p class="subtitle">رؤية استراتيجية لتحويل المشروع من نموذج رائد إلى سلسلة مدارس مؤثرة في الطائف ومكة المكرمة وجدة.</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card p-8">
+                        <h3>المرحلة 1: إتقان النموذج</h3>
+                        <p class="font-semibold text-secondary-blue">(السنوات 1-4)</p>
+                        <p>التركيز الكامل على نجاح المدرسة الأولى لتكون "النموذج المثالي" عبر صقل العمليات وبناء السمعة وتحقيق الاستقرار المالي.</p>
                     </div>
-                    <div class="flex-1 bg-white p-6 rounded-lg shadow-sm">
-                        <i class="fas fa-expand-arrows-alt text-4xl text-accent-gold mb-4"></i>
-                        <h4>المرحلة 2 (5-8 سنوات)</h4><p>التوسع المدروس</p>
+                    <div class="card p-8">
+                        <h3>المرحلة 2: التوسع المدروس</h3>
+                         <p class="font-semibold text-secondary-blue">(السنوات 5-8)</p>
+                        <p>إطلاق أول فرع جديد في إحدى المدن المستهدفة، مع استنساخ نموذج النجاح الأول وتكييفه حسب طبيعة السوق المحلي.</p>
                     </div>
-                    <div class="flex-1 bg-white p-6 rounded-lg shadow-sm">
-                        <i class="fas fa-trophy text-4xl text-accent-gold mb-4"></i>
-                        <h4>المرحلة 3 (9+ سنوات)</h4><p>الانتشار والقيادة</p>
+                    <div class="card p-8">
+                        <h3>المرحلة 3: الانتشار والقيادة</h3>
+                         <p class="font-semibold text-secondary-blue">(السنوات 9 فصاعدًا)</p>
+                        <p>التوسع المتسارع في مكة وجدة، مع إمكانية إطلاق سلاسل مدارس متخصصة تحت مظلة "شركة التشغيل".</p>
                     </div>
                 </div>
             </div>
@@ -361,17 +336,17 @@
             <div class="container mx-auto px-6 max-w-4xl">
                 <h2>آلية إنهاء العقد</h2>
                 <p class="subtitle">خيارات استراتيجية واضحة وشفافة للجمعية الخيرية عند اكتمال مدة العقد (25 عامًا).</p>
-                 <div class="space-y-8">
-                    <div>
-                        <h4>الخيار الأول: التسليم الكامل للجمعية مع الدعم الفني (Handover)</h4>
+                 <div class="space-y-6">
+                    <div class="bg-light-gray p-6 rounded-lg">
+                        <h4>الخيار الأول: التسليم الكامل للجمعية (Handover)</h4>
                         <p>تقوم "شركة التشغيل" بتسليم مدرسة ناجحة ومستدامة إلى الجمعية الخيرية لتتولى إدارتها بشكل مباشر، مع تقديم خطة انتقال سلسة.</p>
                     </div>
-                    <div>
-                        <h4>الخيار الثاني: تجديد عقد التشغيل بشروط جديدة (Renewal)</h4>
+                    <div class="bg-light-gray p-6 rounded-lg">
+                        <h4>الخيار الثاني: تجديد عقد التشغيل (Renewal)</h4>
                         <p>في حال رغبة الجمعية باستمرار الشراكة، يتم تجديد عقد التشغيل لمدة جديدة مع إمكانية التفاوض على شروط تعظم العائد على الوقف.</p>
                     </div>
-                    <div>
-                        <h4>الخيار الثالث: الاستحواذ الكامل من قبل شركة التشغيل (Acquisition)</h4>
+                    <div class="bg-light-gray p-6 rounded-lg">
+                        <h4>الخيار الثالث: الاستحواذ الكامل (Acquisition)</h4>
                         <p>تعرض "شركة التشغيل" شراء أصول المدرسة بسعر السوق، مما يوفر سيولة نقدية هائلة للجمعية لإطلاق مشاريع وقفية جديدة.</p>
                     </div>
                 </div>
@@ -381,10 +356,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary-dark text-white">
+    <footer class="bg-primary-blue text-white">
         <div class="container mx-auto px-6 py-8 text-center">
-            <img src="https://storage.googleapis.com/gemini-prod-us-east1-user-content/uploaded:شعار%20مسارات%20الافكار%20(1).png-d807bb64-6704-40a5-9388-19b3baf8fce7" alt="شعار مسارات الأفكار" class="h-20 w-auto mx-auto mb-4" style="filter: brightness(0) invert(1);" onerror="this.onerror=null; this.src='https://placehold.co/200x80/1A374D/ffffff?text=Logo';">
-            <p class="font-semibold text-lg mb-2">مسارات الأفكار التسويقية</p>
+            <img src="https://storage.googleapis.com/gemini-prod-us-east1-user-content/uploaded:شعار%20مسارات%20الافكار%20(1).png-d807bb64-6704-40a5-9388-19b3baf8fce7" alt="شعار المشروع" class="h-20 w-auto mx-auto mb-4" style="filter: brightness(0) invert(1);" onerror="this.onerror=null; this.src='https://placehold.co/200x80/0A4D68/ffffff?text=Logo';">
+            <p class="font-semibold text-lg mb-2">مشروع تأسيس وتشغيل المدارس الأهلية بالشراكة مع القطاع الخيري</p>
             <p class="text-gray-400">&copy; 2024 جميع الحقوق محفوظة.</p>
         </div>
     </footer>
@@ -419,19 +394,21 @@
             });
         });
         
-        //hello
-
         // Active nav link on scroll
         const sections = document.querySelectorAll('main section[id]');
         const navLinks = document.querySelectorAll('header nav a');
         const updateActiveLink = () => {
             let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 90) { // Adjust offset for header height
-                    current = section.getAttribute('id');
-                }
-            });
+             if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2) {
+                current = 'termination';
+            } else {
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 90) { 
+                        current = section.getAttribute('id');
+                    }
+                });
+            }
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
@@ -441,7 +418,7 @@
             });
         };
         window.addEventListener('scroll', updateActiveLink);
-        updateActiveLink();
+        document.addEventListener('DOMContentLoaded', updateActiveLink);
 
     </script>
 </body>
